@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    color: #000;
+}
+
+.main {
+    border: 2px solid black;
+    height: 85vh;
+}
+
+.wrapperOfData {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 20px 30px 20px;
+}
+
+.nameAndCount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.onlyAndCount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.wrapperOfData .device,
+.wrapperOfData .furniture,
+.wrapperOfData .employee {
+    border: 1px solid black;
+}
+
+hr {
+    border: 5px solid purple;
+}

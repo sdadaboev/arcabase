@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.main {
+    margin: 80px 100px;
+}
+label {
+    text-align: left;
+    font-weight: 700;
+}
+p {
+    text-transform: capitalize;
+}
+a,
+a:active,
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+#add-device {
+    max-width: 1024px;
+    margin: auto;
+}
+.form-floating {
+    margin-bottom: 20px;
+}
+
+.new-device {
+    background-color: #e6fffa;
+}
+
+#update-device {
+    max-width: 1024px;
+    margin: auto;
+}
+body {
+    background-color: #fff;
+}
+
+textarea {
+    width: 600px;
+    height: 100px;
+}
+.text-in-textarea {
+    font-family: 10px;
+}
+input {
+    border: 3px solid black;
+}
+
+.btn btn-outline-primary {
+    position: relative;
+    top: 100px;
+}
+button {
+    margin-bottom: 30px;
+}
+textarea {
+    margin-bottom: 20px;
+}

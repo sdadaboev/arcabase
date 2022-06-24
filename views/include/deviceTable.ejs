@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/css/deviceTable.css">
+
+
+<main class="main" id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex-justify-between">
+            <% // i can add button named ("back to home page")%>
+            <h3>all Devices</h3>
+
+        </div>
+
+        <form action="/" method="post">
+            <table class="table table-bordered" id="header-fixed">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>№</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Owner</th>
+                        <th>Action</th>
+                    </tr>
+                    <% for (let i=0; i<devices.length; i++){ %>
+                    <tr>
+                        <td><%= i+1 %></td>
+                        <td><%= devices[i].deviceID %></td>
+                        <td><a href="/only-device/<%= devices[i]._id %>"><%= devices[i].deviceName %></a></td>
+                        <td><%=devices[i].owner %></td>
+                        <td>
+                            <a href="/update-device-button?id=<%= devices[i]._id%>" class="btn border-shadow update">
+                                <span class="text-gradient"><i class="bi bi-pencil"></i></span>
+                            </a>
+                            <a href="/delete-device/<%= devices[i]._id%>" class="btn border-shadow delete">
+                                <span class="text-gradient"><i class="bi bi-trash"></i></span>
+                            </a>
+                        </td>
+                    </tr>
+                    <%}%>
+                </thead>
+            </table>
+        </form>
+    </div>
+</main>

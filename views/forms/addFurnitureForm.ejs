@@ -1,0 +1,144 @@
+<link rel="stylesheet" href="/css/device/add-device.css" />
+<form
+    method="post"
+    action="/furniture/add-furniture"
+    id="add-furniture"
+    name="chooseDeviceForm"
+>
+    <div class="wrapper">
+        <div class="select">
+            <div class="select-tag">
+                <label for="data">TYPE OF FURNITURE:</label> <br />
+                <select class="choose" id="choose" name="data">
+                    <option value="table">table</option>
+                    <option value="locker">locker</option>
+                    <option value="chair">chair</option>
+                    <option value="armchair">armchair</option>
+                    <option value="wardrobe">wardrobe</option>
+                    <option value="other">other</option>
+                </select>
+            </div>
+            <div class="adding">
+                <h3 class="headerOfDevice"></h3>
+            </div>
+        </div>
+        <div class="furniture-name">
+            <label for="furnitureName">NAME</label>
+            <input
+                type="text"
+                class="device-name-input"
+                id="furnitureName"
+                name="furnitureName"
+                autocomplete="off"
+                required
+            />
+        </div>
+        <div class="id-sn-price">
+            <div class="id">
+                <label for="furnitureId">ID</label> <br />
+                <input
+                    type="text"
+                    class="id-input"
+                    id="furnitureId"
+                    name="furnitureId"
+                    autocomplete="off"
+                    required
+                />
+            </div>
+            <div class="sn">
+                <label for="furnitureSN">SN</label> <br />
+                <input
+                    autocomplete="off"
+                    type="text"
+                    class="sn-input"
+                    id="furnitureSN"
+                    name="furnitureSN"
+                    autocomplete="off"
+                    required
+                />
+            </div>
+            <div class="price">
+                <label for="furniturePrice">PRICE</label> <br />
+                <input
+                    type="text"
+                    class="price-input"
+                    id="furniturePrice"
+                    name="furniturePrice"
+                    autocomplete="off"
+                />
+            </div>
+        </div>
+        <div class="vendor">
+            <label for="furnitureVendor">VENDOR</label> <br />
+            <input
+                type="text"
+                class="vendor-input"
+                id="furnitureVendor"
+                name="furnitureVendor"
+                autocomplete="off"
+            />
+        </div>
+        <div class="choose-file">
+            <div>
+                <label for="file">ADD A FILE</label> <br />
+                <input
+                    class="file-input"
+                    type="file"
+                    name="file"
+                    id="file"
+                    accept=".doc, .docx , .pdf"
+                />
+            </div>
+            <div>
+                <label for="photo">ADD A PHOTO</label> <br />
+                <input
+                    class="photo-input"
+                    type="file"
+                    name="photo"
+                    id="photo"
+                    accept="image/*"
+                />
+            </div>
+        </div>
+        <label for="furnitureCharacteristics">CHARACTERISTICS</label> <br />
+        <textarea
+            class="deviceCharacteristics"
+            cols="30"
+            rows="10"
+            id="furnitureCharacteristics"
+            name="furnitureCharacteristics"
+        ></textarea>
+        <label for="furnitureHistory">NOTES</label> <br />
+        <textarea
+            class="notes"
+            id=""
+            cols="30"
+            rows="10"
+            id="furnitureHistory"
+            name="furnitureHistory"
+        ></textarea>
+        <div class="assign-and-add">
+            <div class="assignOrNot">
+                <label for="employee">ASSIGN TO EMPLOYEE</label> <br />
+                <select class="select-employee" name="employee" id="employee">
+                    <option value="laptop">sardor</option>
+                    <option value="monitor">javlon</option>
+                    <option value="keyboard">qobil</option>
+                    <option value="mouse">jamshid</option>
+                </select>
+            </div>
+            <div class="whichCompany">
+                <label for="companyName">ASSIGN TO COMPANY:</label>
+                <select
+                    name="companyName"
+                    id="companyName"
+                    class="companyName"
+                    required
+                >
+                    <option value="company">UNITED SERVICE</option>
+                </select>
+            </div>
+            <button class="button-submit" type="sumbit">add furniture</button>
+        </div>
+    </div>
+</form>

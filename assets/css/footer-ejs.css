@@ -1,0 +1,21 @@
+.buttons {
+    color: red;
+    box-sizing: border-box;
+}
+
+.buttons button {
+    padding: 5px;
+    background: none;
+    color: white;
+}
+button:hover {
+    outline: 1px solid #fff;
+}
+.footer {
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #00001a;
+    padding: 5px 0;
+}

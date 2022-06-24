@@ -1,0 +1,110 @@
+<!--Include header-->
+<%-include('include/_header')%>
+<!--Include header-->
+
+<link rel="stylesheet" href="css/createDevice.css">
+<main class="main">
+    <h3>update Device </h3>
+    <!--Form handling-->
+    <form method="post" action="/device/update-device-button/<%= device._id%>" id="update-device" >
+        <div class="new-device">
+            <div class="form-group">
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="deviceID" name="deviceID" value="<%= device.deviceID%>" placeholder="l001" autocomplete="off">
+                    <label for="deviceID">device ID</label>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="type" name="devictypeeID" value="<%= device.type%>" placeholder="l001" autocomplete="off">
+                    <label for="type">type</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="deviceName" name="deviceName" value="<%= device.deviceName%>"  placeholder="l001" autocomplete="off">
+                    <label for="deviceName">device name</label>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="price" name="price"  placeholder="l001" value="<%= device.price%>"  autocomplete="off">
+                    <label for="price">price</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="owner" name="owner"  placeholder="l001" value="<%= device.owner %>" autocomplete="off">
+                    <label for="owner">owner</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="ownersOffice" name="ownersOffice" value="<%= device.ownersOffice%>"  placeholder="l001" autocomplete="off">
+                    <label for="ownersOffice">ownersOffice</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="ownersDepartment" name="ownersDepartment" value="<%= device.ownersDepartment%>"  placeholder="l001" autocomplete="off">
+                    <label for="ownersDepartment">ownersDepartment</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="ownersLocation" name="ownersLocation" value="<%= device.ownersLocation%>"  placeholder="l001" autocomplete="off">
+                    <label for="ownersLocation">ownersLocation</label>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="ownersPost" name="ownersPost" value="<%= device.ownersPost%>"  placeholder="l001" autocomplete="off">
+                    <label for="ownersPost">ownersPost</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="corporativePhone" name="corporativePhone" value="<%= device.corporativePhone%>"  placeholder="l001" autocomplete="off">
+                    <label for="corporativePhone">corporativePhone</label>
+                </div>
+
+                <div class="textarea1">
+                    <textarea class="form-control" placeholder="write characteristics" value="<%= device.deviceCharacteristics%>"  id="deviceCharacteristics" name="deviceCharacteristics" > <%= device.deviceCharacteristics%></textarea>
+                    <label for="deviceCharacteristics">device characteristics</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="vendorvendor" name="vendor" value="<%= device.vendor%>"  placeholder="l001" autocomplete="off">
+                    <label for="vendor">vendor</label>
+                </div>
+             
+
+                <div class="textarea2">
+                    <textarea class="form-control" placeholder="write comments , notes and etc." id="history" value="<%= device.history%>"   name="history"    ><%= device.history%></textarea>
+                    <label for="history">notes</label>
+                </div>
+
+
+               
+
+
+                <div class="two-buttons">
+                    <button type="submit" class="btn btn-outline-primary">update device</button>
+                    <a href="/show-device-button"><button  type="button" class="btn btn-outline-primary"><i class="bi bi-arrow-90deg-left"></i> back</button></a>
+                  
+                </div>
+
+                
+              
+
+
+
+            </div>
+        </div>
+
+    </form>
+
+
+
+
+
+
+    <!--Form handling-->
+
+</main>
+
+<!--Include footer-->
+<%-include('include/_footer')%>
+<!--Include footer-->

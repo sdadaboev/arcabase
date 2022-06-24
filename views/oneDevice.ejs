@@ -1,0 +1,117 @@
+<!--Include header-->
+<%-include('include/_header')%>
+<!--Include header-->
+
+<link rel="stylesheet" href="/css/onlyDevice.css">
+
+<main class="main">
+   <div class="table">
+    <a href="/show-device-button"><button  type="button" class="btn btn-outline-primary"><i class="bi bi-arrow-90deg-left"></i> back</button></a>
+    <table>
+        <tr>
+            <th>ID</th>
+            <td><%=device.deviceID %></td>
+        </tr>
+        <tr>
+            <th>type</th>
+            <td><%=device.type %></td>
+        </tr>
+        <tr>
+            <th>model</th>
+            <td><%=device.deviceName %></td>
+        </tr>
+        <tr>
+            <th>serial number</th>
+            <td><%=device.deviceSN %></td>
+        </tr>
+        <tr>
+            <th>price</th>
+            <td><%=device.price %></td>
+        </tr>
+        <tr>
+            <th>owner</th>
+            <td><%=device.owner %></td>
+        </tr>
+        <tr>
+            <th>ownersOffice</th>
+            <td><%=device.ownersOffice %></td>
+        </tr>
+        <tr>
+            <th>ownersDepartment</th>
+            <td><%=device.ownersDepartment %></td>
+        </tr>
+        <tr>
+            <th>ownersLocation</th>
+            <td><%=device.ownersLocation %></td>
+        </tr>
+        <tr>
+            <th>ownersPost</th>
+            <td><%=device.ownersPost %></td>
+        </tr>
+        <tr>
+            <th>corporativePhone</th>
+            <td><%=device.corporativePhone %></td>
+        </tr>
+        <tr>
+            <th>personalPhone</th>
+            <td><%=device.personalPhone %></td>
+        </tr>
+        <tr>
+            <th>deviceCharacteristics</th>
+            <td><%=device.deviceCharacteristics %></td>
+        </tr>
+        <tr>
+            <th>vendor</th>
+            <td><%=device.vendor %></td>
+        </tr>
+        <tr>
+            <th>createdData</th>
+            <td><%=device.createdData || device.createdAt %></td>
+        </tr>
+        <tr>
+            <th>history</th>
+            <td><%=device.history %></td>
+        </tr>
+   
+    </table>
+   </div>
+    <!-- <div class="wrapper">
+       
+        <div class="top-photo-data">
+
+            <div class="photo">
+                <img src="/img/employees.jpg" alt="image not found">
+            </div>
+            
+            <div class="top-data">
+
+                <div >
+                    <span class="id"><strong>ID:</strong> <%=device.deviceID %> </span>
+                    <span class="id"><strong>SN:</strong> <%=device.deviceSN %></span>
+                    <span class="id"><strong>NAME:</strong> <%=device.deviceName %> </span>
+                </div>
+                <br>
+                <div class="characteristics"><strong>XARAKTERISTIKA:</strong> <%=device.deviceCharacteristics %></div>
+
+            </div>
+        </div>
+        <div class="middle-data">
+
+            <div class="history">
+               <strong>ZAMETKI: </strong><%=device.history %> </div>
+        </div>
+        <div class="footer-data">
+
+            <div class="id"><strong>PRICE: </strong><%=device.price %></div>
+            <div class="id"><strong>OWNER: </strong><%=device.owner %></div>
+            <div class="id"><strong>CREATED AT: </strong><%=device.createdAt %></div>
+        </div>
+        <a href="/show-device-button"><button  type="button" class="btn btn-outline-primary"><i class="bi bi-arrow-90deg-left"></i> back</button></a>
+    </div> -->
+
+
+</main>
+
+<!--Include footer-->
+<%-include('include/_footer')%>
+<!--Include footer-->

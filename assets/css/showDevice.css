@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+body {
+    background-color: snow;
+}
+.main {
+    text-align: center;
+}
+
+.table .thead-dark th {
+    color: #fff;
+    background-color: #1a1aff;
+}
+a,
+a:active,
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+/* h3{
+    font-family: 'Dancing Script', cursive;
+} */

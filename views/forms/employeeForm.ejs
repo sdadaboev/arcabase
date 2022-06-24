@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="/css/employee/addEmployeeeForm.css" />
+<form
+    action="/employee/add-employee"
+    id="add-employee"
+    name="chooseEmployeeForm"
+>
+    <div class="wrapper">
+        <div class="widthInput">
+            <label for="employeeName">NAME</label>
+            <input
+                type="text"
+                class="width100"
+                id="employeeName"
+                name="employeeName"
+                autocomplete="off"
+                required
+            />
+        </div>
+        <div class="widthInput">
+            <label for="employeeLocation">LOCATION OF OFFICE</label>
+            <input
+                type="text"
+                class="width100"
+                id="employeeLocation"
+                name="employeeLocation"
+                autocomplete="off"
+                required
+            />
+        </div>
+        <div class="widthInput">
+            <label for="employeeOfficeName">OFFICE NAME</label>
+            <input
+                type="text"
+                class="width100"
+                id="employeeOfficeName"
+                name="employeeOfficeName"
+                autocomplete="off"
+                required
+            />
+        </div>
+        <div class="depPost">
+            <div class="whichCompany">
+                <label for="companyName">ASSIGN TO COMPANY:</label>
+                <select
+                    name="companyName"
+                    id="companyName"
+                    class="companyName"
+                    required
+                >
+                    <option value="company">UNITED SERVICE</option>
+                </select>
+            </div>
+            <div class="department">
+                <label class="nananey" for="employeeDepartment"
+                    >DEPARTMENT</label
+                >
+                <select
+                    class="select"
+                    name="dataDepartments"
+                    id="employeeDepartment"
+                >
+                    <option value="buxgalteriya">buxgalteriya</option>
+                    <option value="STO">STO</option>
+                    <option value="IT">IT</option>
+                    <option value="marketing">marketing</option>
+                    <option value="rukovodstvo">rukovodstvo</option>
+                </select>
+            </div>
+            <div class="post">
+                <label for="employeePost">POST</label>
+                <select class="select" name="dataPosts" id="employeePost">
+                    <option value="spetsialist otdela IT">
+                        spetsialist otdela IT
+                    </option>
+                    <option value="spetsialist otdela buxgalteriya">
+                        spetsialist otdela buxgalteriya
+                    </option>
+                    <option value="spetsialist otdela STO">
+                        spetsialist otdela STO
+                    </option>
+                    <option value="spetsialist otdela marketing">
+                        spetsialist otdela marketing
+                    </option>
+                    <option value="spetsialist otdela rukovodstvo">
+                        spetsialist otdela rukovodstvo
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="phone">
+            <div class="personal">
+                <label for="employeePerPhone">PERSONAL PHONE</label>
+                <input
+                    type="tel"
+                    class="phone"
+                    id="employeePerPhone"
+                    name="personalPhone"
+                    placeholder="phone number"
+                    autocomplete="off"
+                    value="+998"
+                />
+            </div>
+            <div class="corporative">
+                <label for="employeeCorPhone">CORPORATIVE PHONE</label>
+                <input
+                    type="tel"
+                    class="phone"
+                    id="employeeCorPhone"
+                    name="corporativePhone"
+                    autocomplete="off"
+                    placeholder="phone number"
+                    value="+998"
+                />
+            </div>
+        </div>
+        <div class="files">
+            <div class="file">
+                <label for="employeeFile">EMPLOYEE'S DOCUMENT</label>
+                <input
+                    type="file"
+                    class="fileChild"
+                    id="employeeFile"
+                    name="employeeFile"
+                    autocomplete="off"
+                    accept=".doc, .docx, .pdf"
+                />
+            </div>
+            <div class="photo">
+                <label for="employeePhoto">EMPLOYEE'S PHOTO</label>
+                <input
+                    type="file"
+                    class="photoChild"
+                    id="employeePhoto"
+                    name="employeePhoto"
+                    autocomplete="off"
+                    accept="image/*"
+                />
+            </div>
+            <button class="button-submit" type="submit">add employee</button>
+        </div>
+    </div>
+</form>

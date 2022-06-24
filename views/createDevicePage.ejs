@@ -1,0 +1,21 @@
+<!--Include header-->
+<%-include('include/_header')%>
+<!--Include header-->
+
+<link rel="stylesheet" href="css/createDevice.css" />
+<main class="main">
+    <p>Adding new device</p>
+    <%-include('forms/device_form.ejs')%>
+</main>
+
+<%-include('include/_footer')%>
+
+<script>
+    let deviceSelect = chooseDeviceForm.type
+    function changeOption() {
+        let selection = document.querySelector('.headerOfDevice')
+        let selectedOption = deviceSelect.options[deviceSelect.selectedIndex]
+        selection.textContent = selectedOption.text
+    }
+    deviceSelect.addEventListener('change', changeOption)
+</script>

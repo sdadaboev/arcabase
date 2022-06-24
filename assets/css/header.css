@@ -1,0 +1,44 @@
+.header {
+    background-color: #00001a;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header .container {
+    max-width: 1100px;
+}
+
+.header .container .wrapper {
+    display: flex;
+    width: 1080px;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 auto;
+}
+
+.wrapper .UL {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper .logo h3 {
+    font-size: 30px;
+    margin: auto;
+    color: #fff;
+}
+
+.wrapper .UL a {
+    color: #fff;
+    padding: 10px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.wrapper .UL a:hover {
+    /* background-color: #fff; */
+    color: #fff;
+    outline: 1px solid #fff;
+}

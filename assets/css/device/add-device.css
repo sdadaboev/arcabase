@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+}
+.headerOfDevice {
+    animation-name: headerAnime;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+@keyframes headerAnime {
+    from {
+        color: #fff;
+    }
+    to {
+        color: #330000;
+    }
+}
+.select {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+}
+.select .choose {
+    width: 200px;
+    padding: 10px;
+    margin-top: 5px;
+}
+.select .adding h3 {
+    margin-top: 30px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+    text-transform: uppercase;
+}
+
+.device-name {
+    margin-top: 20px;
+}
+.device-name-input {
+    margin-top: 5px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid black;
+}
+.id-sn-price {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.id-sn-price .id-input,
+.id-sn-price .sn-input,
+.id-sn-price .price-input {
+    border: 1px solid black;
+    width: 300px;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.vendor {
+    margin-top: 20px;
+}
+
+.vendor .vendor-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid black;
+}
+
+.choose-file {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.choose-file .file-input,
+.choose-file .photo-input {
+    width: 300px;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid black;
+    margin-bottom: 50px;
+}
+
+.deviceCharacteristics,
+.notes {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.assign-and-add {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.assign-and-add .select-employee {
+    width: 300px;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+.assign-and-add .button-submit {
+    position: relative;
+    top: 30px;
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    color: red;
+    background-color: #fff;
+    font-size: 20px;
+    border: 1px solid red;
+    transition: 0.3s;
+}
+
+.assign-and-add .button-submit:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.whichCompany {
+    display: flex;
+    flex-direction: column;
+}
+
+.whichCompany .companyName {
+    padding: 10px;
+    margin-top: 5px;
+}

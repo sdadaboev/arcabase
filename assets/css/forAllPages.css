@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 1100px;
+    border: 1px solid black;
+}
+.container .wrapper {
+    margin: 0 auto;
+}
+a,
+a:active,
+a:hover {
+    text-decoration: none;
+}
+.textLogo,
+.textlogo:active,
+.textLogo:hover {
+    color: #fff;
+}

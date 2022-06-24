@@ -1,0 +1,101 @@
+.wrapper {
+    width: 1040px;
+    margin: 0 auto;
+}
+
+.width100 {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.widthInput {
+    margin: 15px 0;
+}
+
+label {
+    font-weight: 700;
+}
+
+.depPost {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    align-items: center;
+    margin: 20px 0 40px;
+}
+
+/* .nananey {
+    position: relative;
+    top: -40px;
+    right: -90px;
+} */
+.depPost .select {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.department,
+.post {
+    display: flex;
+    flex-direction: column;
+}
+.phone {
+    display: flex;
+    justify-content: flex-end;
+    gap: 100px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.phone .phone {
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.files {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.file,
+.photo {
+    display: flex;
+    flex-direction: column;
+}
+
+.fileChild,
+.photoChild {
+    margin-top: 5px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.files button {
+    padding: 12px 50px;
+    position: relative;
+    top: 14px;
+    border: 1px solid red;
+    background-color: #fff;
+    transition: 0.3s;
+    color: red;
+}
+
+.files button:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.whichCompany {
+    display: flex;
+    flex-direction: column;
+}
+
+.whichCompany .companyName {
+    padding: 10px;
+    margin-top: 5px;
+}

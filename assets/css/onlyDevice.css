@@ -1,0 +1,26 @@
+
+.main{
+    margin-bottom: 100px;
+   
+}
+
+table{
+    width: 85%;
+    border: none;
+    margin: auto;
+
+    
+}
+
+td{
+    padding: 20px;
+
+}
+
+th{
+    font-size: 15px;
+}
+button{
+    
+    position: fixed;
+}

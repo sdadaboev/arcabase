@@ -1,0 +1,120 @@
+.main {
+    height: 85vh;
+    border: none;
+}
+
+.sortAndSearch {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sortAndSearch .sort {
+    display: flex;
+    flex-direction: column;
+}
+.sortAndSearch .sortClass {
+    padding: 10px;
+    border-radius: 5px;
+}
+.sortAndSearch .searchClass {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.sortAndSearch .searchButton {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: #fff;
+    border: 1px solid #191970;
+    color: #191970;
+}
+.sortAndSearch .searchButton:hover {
+    background-color: #191970;
+    color: #fff;
+}
+
+.sortAndSearch .search {
+    align-self: flex-end;
+}
+
+.tableMain {
+    margin: 0;
+    height: 75vh;
+    padding: 20px 40px;
+    overflow-y: scroll;
+}
+
+.tableMain .tableClass {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    overflow-x: scroll;
+}
+
+.tableClass .theadClass {
+    position: sticky;
+    top: -20px;
+    margin-bottom: 100px;
+    width: 100%;
+}
+.tableClass th {
+    border-bottom: 1px solid black;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 10px 0;
+    background-color: #191970;
+    color: #fff;
+}
+
+.tableClass td {
+    padding: 10px 0;
+}
+
+.tableClass .action {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.tableClass .action .actionButton {
+    padding: 5px 10px;
+    background-color: #fff;
+}
+
+.tableClass .action .editBtn {
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    border-radius: 5px;
+}
+.tableClass .action .editBtn:hover {
+    background-color: #00ff00;
+    color: #fff;
+}
+.tableClass .action .deleteBtn {
+    border: 1px solid #ff0000;
+    color: #ff0000;
+    border-radius: 5px;
+}
+
+.tableClass .action .deleteBtn:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.tableClass .deviceName {
+    cursor: pointer;
+    color: #191970;
+    text-decoration: underline;
+}
+
+tfoot td {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.dataName {
+    color: #191970;
+}
