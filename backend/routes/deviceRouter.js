@@ -6,6 +6,7 @@ import {
     deleteDevice,
     updateDevice,
     findOneDevice,
+    addDevice,
 } from '../controller/deviceController.js'
 import { devRoutes } from '../services/render.js'
 // ? 14.06.2022 import { choosePageDeviceOrFurniture } from './router.js'
@@ -19,5 +20,5 @@ dev.get('/populate', populateDevice) // soedinit s sotrudnikom
 dev.get('/delete-device/:id', deleteDevice) // delete device
 dev.post('/update-device-button/:id', updateDevice)
 dev.get('/device/show', devRoutes)
-
+dev.post('/add-device', addDevice)
 export default dev

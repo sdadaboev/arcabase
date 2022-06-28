@@ -16,8 +16,6 @@ export const addDevice = async (req, res, next) => {
             deviceSN: req.body.deviceSN,
             price: req.body.price,
             vendor: req.body.vendor,
-            file: req.body.file,
-            photo: req.body.photo,
             deviceCharacteristics: req.body.deviceCharacteristics,
             notes: req.body.notes,
             cratedData: req.body.cratedData,
@@ -25,11 +23,41 @@ export const addDevice = async (req, res, next) => {
             attachedToCompany: req.body.attachedToCompany,
         })
 
-        // const createdDevice = await Device.create(deviceFromBody)
-        // await Device.updateOne({ files: 'http://127.0.0.1:5000/assets/img/devices' })
-        // await Device.updateOne({ photo: req.file })
-        console.log('addDevicedannnn________________', req.files)
-        console.log('saved to database in this view', createdDevice)
+        const createdDevice = await Device.create(deviceFromBody)
+        const iden = await deviceFromBody.deviceID
+        let files = req.objectOfFiles
+        for (let file in files) {
+            let massivFaylov = files[file]
+            for (let fayl1 of massivFaylov) {
+                if (fayl1.fieldname == 'file') {
+                    await Device.updateOne(
+                        { deviceID: `${iden}` },
+                        {
+                            $push: {
+                                file: {
+                                    name: `${fayl1.originalname}`,
+                                    path: `http://127.0.0.1:5000/assets/uploads/deviceUploads/deviceFiles/${fayl1.originalname}`,
+                                },
+                            },
+                        },
+                    )
+                } else if (fayl1.fieldname == 'photo') {
+                    await Device.updateOne(
+                        { deviceID: `${iden}` },
+                        {
+                            $push: {
+                                photo: {
+                                    name: `${fayl1.originalname}`,
+                                    path: `http://127.0.0.1:5000/assets/uploads/deviceUploads/devicePhotos/${fayl1.originalname}`,
+                                },
+                            },
+                        },
+                    )
+                } else {
+                    console.log('error from for-of array of req.files')
+                }
+            }
+        }
         res.redirect('/add-device')
     } catch (error) {
         res.status(500).send({
