@@ -8,7 +8,6 @@ export const addDevice = async (req, res, next) => {
             res.status(400).send({ message: 'Content can not be empty' })
             return
         }
-        console.log('firstly , data from body -> -> ->', req.body)
         const deviceFromBody = new Device({
             type: req.body.type,
             deviceName: req.body.deviceName,
@@ -58,7 +57,8 @@ export const addDevice = async (req, res, next) => {
                 }
             }
         }
-        res.redirect('/add-device')
+
+        res.redirect('/device/add-device')
     } catch (error) {
         res.status(500).send({
             message: 'Sardorni serveridan hatolik ',

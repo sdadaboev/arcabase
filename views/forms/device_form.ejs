@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="/css/device/add-device.css" />
+<link rel="stylesheet" href="/css/header.css" />
+<link rel="stylesheet" href="/css/forAllPages.css" />
 <form
     method="post"
     action="http://127.0.0.1:5000/device-form/add-device"
@@ -11,15 +13,11 @@
             <div class="select-tag">
                 <label for="type">TYPE OF DEVICE:</label> <br />
                 <select class="choose" id="choose" name="type">
-                    <option value="laptop">laptop</option>
-                    <option value="monitor">monitor</option>
-                    <option value="keyboard">keyboard</option>
-                    <option value="mouse">mouse</option>
-                    <option value="headphones">headphones</option>
-                    <option value="pc">pc</option>
-                    <option value="tablet">tablet</option>
-                    <option value="coffeeMachine">coffee machine</option>
-                    <option value="other">other</option>
+                    <% types.forEach((typeOnly) => { %>
+                    <option value="<%= typeOnly.type %>">
+                        <%= typeOnly.type %>
+                    </option>
+                    <% }) %>
                 </select>
             </div>
             <div class="adding">

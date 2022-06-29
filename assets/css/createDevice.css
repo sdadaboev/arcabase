@@ -2,7 +2,10 @@
 
 .main {
     margin: 80px 100px;
+    border: 2px solid black;
+    padding: 10px 0 20px 0;
 }
+
 label {
     text-align: left;
     font-weight: 700;
@@ -10,6 +13,7 @@ label {
 p {
     text-transform: capitalize;
 }
+
 a,
 a:active,
 a:hover {
