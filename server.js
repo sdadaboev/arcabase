@@ -10,7 +10,9 @@ import dev from './backend/routes/deviceRouter.js'
 import emp from './backend/routes/employeeRouter.js'
 import devType from './backend/routes/deviceType/deviceTypeRouter.js'
 import productImage from './backend/middlewares/deviceFormUpload.js'
-
+import departmentType from './backend/routes/departmentType/departmentTypeRouter.js'
+import postType from './backend/routes/postType/postTypeRouter.js'
+import dynamic_D_P from './backend/routes/employee/departmentAndPostTypeRouter.js'
 import {
     homepage,
     createDevicePage,
@@ -22,11 +24,9 @@ import {
     deleteDevice,
     chooseDeviceOrFurniture,
     addFurniture,
-    addEmployee,
     viewData,
     viewOnlyData,
 } from './backend/routes/router.js'
-
 import { uploadDevice } from './backend/controller/deviceController.js'
 const __dirname = path.resolve()
 
@@ -44,6 +44,9 @@ app.use('/device', dev)
 app.use('/employee', emp)
 app.use('/device-type', devType)
 app.use('/device-form', productImage)
+app.use('/department', departmentType)
+app.use('/post', postType)
+app.use('/employee-job', dynamic_D_P)
 
 // load engine
 app.set('view engine', 'ejs')
@@ -67,7 +70,6 @@ app.get('/show-employee-button', showEmployee)
 app.get('/only-device/:id', onlyDevice)
 app.get('/delete-device/:id', deleteDevice)
 app.get('/add-furniture', addFurniture)
-app.get('/add-employee', addEmployee)
 app.get('/view-data/device/:id', viewOnlyData)
 
 // app.get('/' , (req,res)=>{

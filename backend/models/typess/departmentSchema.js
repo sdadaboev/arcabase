@@ -1,22 +1,17 @@
 import mongoose from 'mongoose'
 const { Schema, model } = mongoose
-const post = new Schema(
+const department = new Schema(
     {
-        post: {
+        department: {
             type: String,
             trim: true,
             required: true,
             unique: true,
         },
-        department: {
-            type: String,
-            trim: true,
-            required: true,
-        },
     },
     { timestamps: true },
 )
 
-const posts = model('posts', post)
+const departments = model('departments', department)
 
-export default posts
+export default departments

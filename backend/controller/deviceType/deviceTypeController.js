@@ -29,9 +29,7 @@ export const getDeviceTypes = async (req, res, next) => {
     try {
         const typesFromMongo = await DeviceTypes.find()
         console.log('types From mongo ', typesFromMongo)
-        typesFromMongo.forEach((typeOnly) => {
-            console.log(typeOnly.type)
-        })
+
         res.render('createDevicePage', { types: typesFromMongo })
         next()
     } catch (error) {

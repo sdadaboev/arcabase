@@ -59,32 +59,25 @@
                     name="dataDepartments"
                     id="employeeDepartment"
                 >
-                    <option value="buxgalteriya">buxgalteriya</option>
-                    <option value="STO">STO</option>
+                    <option value="choose">choose</option>
                     <option value="IT">IT</option>
-                    <option value="marketing">marketing</option>
-                    <option value="rukovodstvo">rukovodstvo</option>
+                    <option value="STO">STO</option>
+                    <!-- <option value="выберите отдел">выберите отдел</option> -->
+
+                    <!-- <% departments.forEach((departmentOnly) => { %>
+                    <option value="<%= departmentOnly.department %>">
+                        <%= departmentOnly.department %>
+                    </option>
+                    <% }) %> -->
                 </select>
             </div>
             <div class="post">
                 <label for="employeePost">POST</label>
-                <select class="select" name="dataPosts" id="employeePost">
-                    <option value="spetsialist otdela IT">
-                        spetsialist otdela IT
-                    </option>
-                    <option value="spetsialist otdela buxgalteriya">
-                        spetsialist otdela buxgalteriya
-                    </option>
-                    <option value="spetsialist otdela STO">
-                        spetsialist otdela STO
-                    </option>
-                    <option value="spetsialist otdela marketing">
-                        spetsialist otdela marketing
-                    </option>
-                    <option value="spetsialist otdela rukovodstvo">
-                        spetsialist otdela rukovodstvo
-                    </option>
-                </select>
+                <select
+                    class="select"
+                    name="dataPosts"
+                    id="employeePost"
+                ></select>
             </div>
         </div>
         <div class="phone">

@@ -110,13 +110,13 @@ export const addFurniture = async (req, res) => {
     }
 }
 
-export const addEmployee = async (req, res) => {
-    try {
-        res.render('addEmployee')
-    } catch (error) {
-        console.log(error)
-    }
-}
+// export const addEmployee = async (req, res) => {
+//     try {
+//         res.render('addEmployee')
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
 
 export const viewData = async (req, res) => {
     try {
