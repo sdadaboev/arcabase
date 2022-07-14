@@ -1,10 +1,12 @@
-import express, { Router } from 'express'
+import express from 'express'
+
 import {
     showEmployees,
     createEmployee,
 } from '../controller/employeeController.js'
+
 const emp = express.Router()
-emp.get('/add-employee')
+
 emp.post('/create-employee', createEmployee)
 
 emp.get('/1', showEmployees)

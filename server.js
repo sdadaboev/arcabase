@@ -41,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(morgan('common'))
 app.use('/device', dev)
-app.use('/employee', emp)
+app.use('/employee-form', emp)
 app.use('/device-type', devType)
 app.use('/device-form', productImage)
 app.use('/department', departmentType)
@@ -57,6 +57,10 @@ app.set('view engine', 'ejs')
 app.use('/css', express.static(path.resolve(__dirname, 'assets/css')))
 app.use('/img', express.static(path.resolve(__dirname, 'assets/img')))
 app.use('/js', express.static(path.resolve(__dirname, 'assets/js')))
+// app.use(
+//     '/controller',
+//     express.static(path.resolve(__dirname, 'backend/controller')),
+// )
 
 app.get('/', homepage)
 app.get('/add-device', createDevicePage)

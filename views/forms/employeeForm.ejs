@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="/css/employee/addEmployeeeForm.css" />
 <form
-    action="/employee/add-employee"
+    method="post"
+    action="http://127.0.0.1:5000/employee-form/create-employee"
     id="add-employee"
     name="chooseEmployeeForm"
 >
@@ -10,10 +11,20 @@
             <input
                 type="text"
                 class="width100"
-                id="employeeName"
-                name="employeeName"
+                id="name"
+                name="name"
                 autocomplete="off"
                 required
+            />
+        </div>
+        <div class="widthInput">
+            <label for="username">USERNAME</label>
+            <input
+                type="text"
+                class="width100"
+                name="username"
+                placeholder="example: alex"
+                autocomplete="off"
             />
         </div>
         <div class="widthInput">
@@ -22,7 +33,7 @@
                 type="text"
                 class="width100"
                 id="employeeLocation"
-                name="employeeLocation"
+                name="locationOfOffice"
                 autocomplete="off"
                 required
             />
@@ -33,7 +44,7 @@
                 type="text"
                 class="width100"
                 id="employeeOfficeName"
-                name="employeeOfficeName"
+                name="officeName"
                 autocomplete="off"
                 required
             />
@@ -42,7 +53,7 @@
             <div class="whichCompany">
                 <label for="companyName">ASSIGN TO COMPANY:</label>
                 <select
-                    name="companyName"
+                    name="assignToCompany"
                     id="companyName"
                     class="companyName"
                     required
@@ -56,15 +67,16 @@
                 >
                 <select
                     class="select"
-                    name="dataDepartments"
+                    name="department"
                     id="employeeDepartment"
                 >
-                    <option value="choose">choose</option>
+                    <!-- <option value="choose">choose</option>
                     <option value="IT">IT</option>
-                    <option value="STO">STO</option>
-                    <!-- <option value="выберите отдел">выберите отдел</option> -->
+                    <option value="STO">STO</option> -->
 
-                    <!-- <% departments.forEach((departmentOnly) => { %>
+                    <option value="выберите отдел">выберите отдел</option>
+
+                    <% departments.forEach((departmentOnly) => { %>
                     <option value="<%= departmentOnly.department %>">
                         <%= departmentOnly.department %>
                     </option>
@@ -73,13 +85,10 @@
             </div>
             <div class="post">
                 <label for="employeePost">POST</label>
-                <select
-                    class="select"
-                    name="dataPosts"
-                    id="employeePost"
-                ></select>
+                <select class="select" name="post" id="employeePost"></select>
             </div>
         </div>
+
         <div class="phone">
             <div class="personal">
                 <label for="employeePerPhone">PERSONAL PHONE</label>

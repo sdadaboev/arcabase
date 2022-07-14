@@ -6,6 +6,10 @@ const employee = new Schema(
             type: String,
             required: true,
         },
+        username: {
+            type: String,
+            unique: [true, 'this username is already exist'],
+        },
         locationOfOffice: {
             type: String,
         },
@@ -27,10 +31,7 @@ const employee = new Schema(
             minlength: [1, ' so short post'],
             maxlength: [100, 'soo long post'],
         },
-        username: {
-            type: String,
-            unique: [true, 'this username is already exist'],
-        },
+
         personalPhone: {
             type: String,
             unique: true,
@@ -51,11 +52,7 @@ const employee = new Schema(
                 trim: true,
             },
         ],
-        employeeID: {
-            type: String,
-            unique: true,
-            required: true,
-        },
+
         devices: [
             {
                 type: Schema.Types.ObjectId,

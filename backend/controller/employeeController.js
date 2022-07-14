@@ -2,14 +2,22 @@ import Employee from '../models/employeeSchema.js'
 
 export const createEmployee = async (req, res) => {
     try {
-        const employee = {
+        console.log('req.body: ', req.body)
+
+        const employee = new Employee({
             name: req.body.name,
-            company: req.body.company,
+            username: req.body.username,
+            locationOfOffice: req.body.locationOfOffice,
+            officeName: req.body.officeName,
+            assignToCompany: req.body.assignToCompany,
             department: req.body.department,
             post: req.body.post,
-        }
+            personalPhone: req.body.personalPhone,
+            corporativePhone: req.body.corporativePhone,
+        })
+        console.log('employee is: ', employee)
         await Employee.create(employee)
-        res.send('added')
+        res.redirect('/employee-job/add-employee')
     } catch (error) {
         console.log(error)
     }
