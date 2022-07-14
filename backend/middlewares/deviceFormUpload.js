@@ -3,7 +3,6 @@ import path from 'path'
 import multer from 'multer'
 import { addDevice } from '../controller/deviceController.js'
 const productImage = Router()
-import Device from '../models/deviceSchema.js'
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         if (file.fieldname == 'file') {

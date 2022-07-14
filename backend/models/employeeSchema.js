@@ -1,5 +1,9 @@
 import mongoose from 'mongoose'
 const { Schema, model } = mongoose
+const fileInfo = new Schema({
+    name: { type: String, default: 'none' },
+    path: { type: String, default: 'none' },
+})
 const employee = new Schema(
     {
         name: {
@@ -40,18 +44,8 @@ const employee = new Schema(
             type: String,
             unique: true,
         },
-        files: [
-            {
-                type: [String, 'you can upload only 3 photos'],
-                trim: true,
-            },
-        ],
-        photos: [
-            {
-                type: [String, 'you can upload only 3 photos'],
-                trim: true,
-            },
-        ],
+        files: [fileInfo],
+        photos: [fileInfo],
 
         devices: [
             {

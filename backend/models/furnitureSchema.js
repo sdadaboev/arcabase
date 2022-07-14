@@ -1,34 +1,27 @@
 import mongoose from 'mongoose'
 const { Schema, model } = mongoose
+const fileInfo = new Schema({
+    name: { type: String, default: 'none' },
+    path: { type: String, default: 'none' },
+})
 const furniture = new Schema(
     {
         type: {
             type: String,
             trim: true,
             required: true,
-            enum: [
-                'chair',
-                'mebel',
-                'mebel',
-                'mebel',
-                'mebel',
-                'mebel',
-                'mebel',
-                'mebel',
-                'mebel',
-            ],
         },
-        furnitureName: {
+        name: {
             type: String,
             required: true,
         },
-        furnitureID: {
+        ID: {
             type: String,
             required: true,
             unique: true,
             trim: true,
         },
-        furnitureSN: {
+        SN: {
             type: String,
             required: true,
             unique: true,
@@ -42,31 +35,21 @@ const furniture = new Schema(
             type: String,
             trim: true,
         },
-        files: [
-            {
-                type: [String, 'you can upload only 3 files'],
-                trim: true,
-            },
-        ],
-        photos: [
-            {
-                type: [String, 'you can upload only 3 photos'],
-                trim: true,
-            },
-        ],
-        furnitureCharacteristics: {
+        files: [fileInfo],
+        photos: [fileInfo],
+        characteristics: {
             type: String,
             required: true,
         },
-        history: {
+        notes: {
             type: String,
         },
 
-        attachedToOwner: {
+        owner: {
             type: Schema.Types.ObjectId,
             ref: 'employee',
         },
-        attachedToCompany: {
+        company: {
             type: Schema.Types.ObjectId,
             ref: 'company',
         },

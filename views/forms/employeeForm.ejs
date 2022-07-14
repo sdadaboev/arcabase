@@ -4,6 +4,7 @@
     action="http://127.0.0.1:5000/employee-form/create-employee"
     id="add-employee"
     name="chooseEmployeeForm"
+    enctype="multipart/form-data"
 >
     <div class="wrapper">
         <div class="widthInput">
@@ -23,7 +24,7 @@
                 type="text"
                 class="width100"
                 name="username"
-                placeholder="example: alex"
+                placeholder="alex"
                 autocomplete="off"
             />
         </div>
@@ -122,9 +123,10 @@
                     type="file"
                     class="fileChild"
                     id="employeeFile"
-                    name="employeeFile"
+                    name="file"
                     autocomplete="off"
                     accept=".doc, .docx, .pdf"
+                    multiple
                 />
             </div>
             <div class="photo">
@@ -133,9 +135,10 @@
                     type="file"
                     class="photoChild"
                     id="employeePhoto"
-                    name="employeePhoto"
+                    name="photo"
                     autocomplete="off"
                     accept="image/*"
+                    multiple
                 />
             </div>
             <button class="button-submit" type="submit">add employee</button>

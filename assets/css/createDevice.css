@@ -2,7 +2,7 @@
 
 .main {
     margin: 80px 100px;
-    border: 2px solid black;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 10px 0 20px 0;
 }
 

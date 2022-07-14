@@ -17,6 +17,42 @@ export const createEmployee = async (req, res) => {
         })
         console.log('employee is: ', employee)
         await Employee.create(employee)
+
+        const iden = await employee.username
+        let files = req.objectOfFiles
+        for (let file in files) {
+            let massivFaylov = files[file]
+            for (let fayl1 of massivFaylov) {
+                if (fayl1.fieldname == 'file') {
+                    await Employee.updateOne(
+                        { username: `${iden}` },
+                        {
+                            $push: {
+                                files: {
+                                    name: `${fayl1.originalname}`,
+                                    path: `http://127.0.0.1:5000/assets/uploads/deviceUploads/deviceFiles/${fayl1.originalname}`,
+                                },
+                            },
+                        },
+                    )
+                } else if (fayl1.fieldname == 'photo') {
+                    await Employee.updateOne(
+                        { username: `${iden}` },
+                        {
+                            $push: {
+                                photos: {
+                                    name: `${fayl1.originalname}`,
+                                    path: `http://127.0.0.1:5000/assets/uploads/deviceUploads/devicePhotos/${fayl1.originalname}`,
+                                },
+                            },
+                        },
+                    )
+                } else {
+                    console.log('error from for-of array of req.files')
+                }
+            }
+        }
+
         res.redirect('/employee-job/add-employee')
     } catch (error) {
         console.log(error)

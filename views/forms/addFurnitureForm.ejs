@@ -1,15 +1,15 @@
 <link rel="stylesheet" href="/css/device/add-device.css" />
 <form
     method="post"
-    action="/furniture/add-furniture"
+    action="http://127.0.0.1:5000/furniture/add-furniture"
     id="add-furniture"
     name="chooseDeviceForm"
 >
-    <div class="wrapper">
+    <div class="wrapper2">
         <div class="select">
             <div class="select-tag">
                 <label for="data">TYPE OF FURNITURE:</label> <br />
-                <select class="choose" id="choose" name="data">
+                <select class="choose" id="choose" name="type">
                     <option value="table">table</option>
                     <option value="locker">locker</option>
                     <option value="chair">chair</option>
@@ -28,7 +28,7 @@
                 type="text"
                 class="device-name-input"
                 id="furnitureName"
-                name="furnitureName"
+                name="name"
                 autocomplete="off"
                 required
             />
@@ -40,7 +40,7 @@
                     type="text"
                     class="id-input"
                     id="furnitureId"
-                    name="furnitureId"
+                    name="ID"
                     autocomplete="off"
                     required
                 />
@@ -52,7 +52,7 @@
                     type="text"
                     class="sn-input"
                     id="furnitureSN"
-                    name="furnitureSN"
+                    name="SN"
                     autocomplete="off"
                     required
                 />
@@ -63,7 +63,7 @@
                     type="text"
                     class="price-input"
                     id="furniturePrice"
-                    name="furniturePrice"
+                    name="price"
                     autocomplete="off"
                 />
             </div>
@@ -74,7 +74,7 @@
                 type="text"
                 class="vendor-input"
                 id="furnitureVendor"
-                name="furnitureVendor"
+                name="vendor"
                 autocomplete="off"
             />
         </div>
@@ -84,7 +84,7 @@
                 <input
                     class="file-input"
                     type="file"
-                    name="file"
+                    name="files"
                     id="file"
                     accept=".doc, .docx , .pdf"
                 />
@@ -94,7 +94,7 @@
                 <input
                     class="photo-input"
                     type="file"
-                    name="photo"
+                    name="photos"
                     id="photo"
                     accept="image/*"
                 />
@@ -106,7 +106,7 @@
             cols="30"
             rows="10"
             id="furnitureCharacteristics"
-            name="furnitureCharacteristics"
+            name="characteristics"
         ></textarea>
         <label for="furnitureHistory">NOTES</label> <br />
         <textarea
@@ -115,22 +115,22 @@
             cols="30"
             rows="10"
             id="furnitureHistory"
-            name="furnitureHistory"
+            name="notes"
         ></textarea>
         <div class="assign-and-add">
             <div class="assignOrNot">
                 <label for="employee">ASSIGN TO EMPLOYEE</label> <br />
-                <select class="select-employee" name="employee" id="employee">
-                    <option value="laptop">sardor</option>
-                    <option value="monitor">javlon</option>
-                    <option value="keyboard">qobil</option>
-                    <option value="mouse">jamshid</option>
+                <select class="select-employee" name="owner" id="employee">
+                    <option value="sardor">sardor</option>
+                    <option value="javlon">javlon</option>
+                    <option value="qobil">qobil</option>
+                    <option value="jamshid">jamshid</option>
                 </select>
             </div>
             <div class="whichCompany">
                 <label for="companyName">ASSIGN TO COMPANY:</label>
                 <select
-                    name="companyName"
+                    name="company"
                     id="companyName"
                     class="companyName"
                     required
