@@ -8,6 +8,12 @@ export const addDevice = async (req, res, next) => {
             res.status(400).send({ message: 'Content can not be empty' })
             return
         }
+        const employeeeFromMOngo = await Employee.find({
+            name: req.body.employee,
+        })
+        console.log(employeeeFromMOngo)
+        const idOfFindedEmployee = employeeeFromMOngo[0]._id
+
         const deviceFromBody = new Device({
             type: req.body.type,
             deviceName: req.body.deviceName,
@@ -18,9 +24,10 @@ export const addDevice = async (req, res, next) => {
             deviceCharacteristics: req.body.deviceCharacteristics,
             notes: req.body.notes,
             cratedData: req.body.cratedData,
-            attachedToOwner: req.body.attachedToOwner,
+            attachedToOwner: idOfFindedEmployee,
             attachedToCompany: req.body.attachedToCompany,
         })
+        console.log(req.body)
 
         const createdDevice = await Device.create(deviceFromBody)
         const iden = await deviceFromBody.deviceID

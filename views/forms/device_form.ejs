@@ -126,10 +126,12 @@
             <div class="assignOrNot">
                 <label for="employee">ASSIGN TO EMPLOYEE:</label> <br />
                 <select class="select-employee" name="employee" id="employee">
-                    <option value="sardor">sardor</option>
-                    <option value="javlon">javlon</option>
-                    <option value="qobil">qobil</option>
-                    <option value="jamshid">jamshid</option>
+                    <option value="nimadir">choose an employee</option>
+                    <% employees.forEach((EmpOnly) => { %>
+                    <option value="<%= EmpOnly.name %>">
+                        <%= EmpOnly.name %>
+                    </option>
+                    <% }) %>
                 </select>
             </div>
             <div class="whichCompany">
