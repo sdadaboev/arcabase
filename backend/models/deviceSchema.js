@@ -10,17 +10,6 @@ const device = new Schema(
             type: String,
             trim: true,
             required: true,
-            enum: [
-                'laptop',
-                'monitor',
-                'keyboard',
-                'mouse',
-                'headphones',
-                'pc',
-                'tablet',
-                'coffeeMachine',
-                'other',
-            ],
         },
         deviceName: {
             type: String,
@@ -62,7 +51,11 @@ const device = new Schema(
 
         attachedToOwner: {
             type: Schema.Types.ObjectId,
-            ref: 'sotrudnik',
+            refPath: 'commonSchema',
+        },
+        commonSchema: {
+            type: String,
+            enum: ['employees', 'storage'],
         },
         attachedToCompany: {
             type: Schema.Types.ObjectId,

@@ -38,11 +38,9 @@ const employee = new Schema(
 
         personalPhone: {
             type: String,
-            unique: true,
         },
         corporativePhone: {
             type: String,
-            unique: true,
         },
         files: [fileInfo],
         photos: [fileInfo],
@@ -50,7 +48,7 @@ const employee = new Schema(
         devices: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'device',
+                ref: 'devices',
             },
         ],
         furniture: [

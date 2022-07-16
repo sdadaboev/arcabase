@@ -1,5 +1,5 @@
 import Employee from '../models/employeeSchema.js'
-
+import Devices from '../models/deviceSchema.js'
 export const createEmployee = async (req, res) => {
     try {
         console.log('req.body: ', req.body)
@@ -16,6 +16,14 @@ export const createEmployee = async (req, res) => {
             corporativePhone: req.body.corporativePhone,
         })
         console.log('employee is: ', employee)
+        if (req.body.personalPhone == '') {
+            console.log(" personal bo'sh")
+            employee.personalPhone = null
+        }
+        if (req.body.corporativePhone == '') {
+            console.log(" corporative bo'sh")
+            employee.corporativePhone = null
+        }
         await Employee.create(employee)
 
         const iden = await employee.username

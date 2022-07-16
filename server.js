@@ -14,6 +14,7 @@ import departmentType from './backend/routes/departmentType/departmentTypeRouter
 import postType from './backend/routes/postType/postTypeRouter.js'
 import dynamic_D_P from './backend/routes/employee/departmentAndPostTypeRouter.js'
 import furniture from './backend/routes/furnitureRouter.js'
+import storage from './backend/routes/storage/storageRouter.js'
 import {
     homepage,
     createDevicePage,
@@ -49,6 +50,7 @@ app.use('/department', departmentType)
 app.use('/post', postType)
 app.use('/employee-job', dynamic_D_P)
 app.use('/furniture', furniture)
+app.use('/storage', storage)
 
 // load engine
 app.set('view engine', 'ejs')

@@ -1,7 +1,7 @@
 import Device from '../models/deviceSchema.js'
 import Employee from '../models/employeeSchema.js'
 import { updateDevicePage } from '../routes/router.js'
-
+import Storage from '../models/storage.js'
 export const addDevice = async (req, res, next) => {
     try {
         if (!req.body) {
@@ -11,8 +11,20 @@ export const addDevice = async (req, res, next) => {
         const employeeeFromMOngo = await Employee.find({
             name: req.body.employee,
         })
-        console.log(employeeeFromMOngo)
-        const idOfFindedEmployee = employeeeFromMOngo[0]._id
+        let commonSchemaValue = ''
+        let getID = ''
+        let idOfFindedEmployee = ''
+        if (req.body.employee == 'storage') {
+            commonSchemaValue = 'storage'
+            const getStorage = await Storage.find({ name: 'device storage' })
+            console.log('getStorage: ', getStorage[0]._id)
+            getID = getStorage[0]._id
+        } else {
+            idOfFindedEmployee = employeeeFromMOngo[0]._id
+            commonSchemaValue = 'employees'
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////
 
         const deviceFromBody = new Device({
             type: req.body.type,
@@ -24,12 +36,34 @@ export const addDevice = async (req, res, next) => {
             deviceCharacteristics: req.body.deviceCharacteristics,
             notes: req.body.notes,
             cratedData: req.body.cratedData,
-            attachedToOwner: idOfFindedEmployee,
+            attachedToOwner:
+                req.body.employee == 'storage' ? getID : idOfFindedEmployee,
+            commonSchema: commonSchemaValue,
             attachedToCompany: req.body.attachedToCompany,
         })
         console.log(req.body)
 
         const createdDevice = await Device.create(deviceFromBody)
+        let deviceIDforStorage = createdDevice._id
+
+        await Storage.updateOne(
+            { name: 'device storage' },
+            {
+                $push: {
+                    data: deviceIDforStorage,
+                },
+            },
+        )
+        // !Employega bilan device qo'shilib ,  populate qilinvotti
+        await Employee.updateOne(
+            { _id: idOfFindedEmployee },
+            {
+                $push: {
+                    devices: deviceIDforStorage,
+                },
+            },
+        )
+
         const iden = await deviceFromBody.deviceID
         let files = req.objectOfFiles
         for (let file in files) {
@@ -64,7 +98,14 @@ export const addDevice = async (req, res, next) => {
                 }
             }
         }
+        ///////////////////////////////////////////
+        const data = await Device.find().populate('attachedToOwner')
+        const data2 = await Employee.findOne({
+            _id: idOfFindedEmployee,
+        }).populate('devices')
 
+        console.log('device populate: ', data)
+        console.log('employees populate: ', data2)
         res.redirect('/device/add-device')
     } catch (error) {
         res.status(500).send({
