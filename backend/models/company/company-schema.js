@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
 const { Schema, model } = mongoose
-const furnitureTypeSchema = new Schema(
+const companyShcema = new Schema(
     {
-        type: {
+        company: {
             type: String,
             trim: true,
             required: true,
@@ -12,6 +12,6 @@ const furnitureTypeSchema = new Schema(
     { timestamps: true },
 )
 
-const furnitureType = model('furniture-type', furnitureTypeSchema)
+const company = model('company', companyShcema)
 
-export default furnitureType
+export default company

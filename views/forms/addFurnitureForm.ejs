@@ -1,21 +1,21 @@
 <link rel="stylesheet" href="/css/device/add-device.css" />
 <form
     method="post"
-    action="http://127.0.0.1:5000/furniture/add-furniture"
+    action="http://127.0.0.1:5000/furniture-form/add-furniture"
     id="add-furniture"
     name="chooseDeviceForm"
+    enctype="multipart/form-data"
 >
     <div class="wrapper2">
         <div class="select">
             <div class="select-tag">
                 <label for="data">TYPE OF FURNITURE:</label> <br />
                 <select class="choose" id="choose" name="type">
-                    <option value="table">table</option>
-                    <option value="locker">locker</option>
-                    <option value="chair">chair</option>
-                    <option value="armchair">armchair</option>
-                    <option value="wardrobe">wardrobe</option>
-                    <option value="other">other</option>
+                    <% type.forEach((typeOnly) => { %>
+                    <option value="<%= typeOnly.type %>">
+                        <%= typeOnly.type %>
+                    </option>
+                    <% }) %>
                 </select>
             </div>
             <div class="adding">
@@ -84,9 +84,10 @@
                 <input
                     class="file-input"
                     type="file"
-                    name="files"
+                    name="file"
                     id="file"
                     accept=".doc, .docx , .pdf"
+                    multiple
                 />
             </div>
             <div>
@@ -94,9 +95,10 @@
                 <input
                     class="photo-input"
                     type="file"
-                    name="photos"
+                    name="photo"
                     id="photo"
                     accept="image/*"
+                    multiple
                 />
             </div>
         </div>
@@ -121,10 +123,12 @@
             <div class="assignOrNot">
                 <label for="employee">ASSIGN TO EMPLOYEE</label> <br />
                 <select class="select-employee" name="owner" id="employee">
-                    <option value="sardor">sardor</option>
-                    <option value="javlon">javlon</option>
-                    <option value="qobil">qobil</option>
-                    <option value="jamshid">jamshid</option>
+                    <option value="storage">склад</option>
+                    <% employee.forEach((EmpOnly) => { %>
+                    <option value="<%= EmpOnly.name %>">
+                        <%= EmpOnly.name %>
+                    </option>
+                    <% }) %>
                 </select>
             </div>
             <div class="whichCompany">
@@ -135,7 +139,11 @@
                     class="companyName"
                     required
                 >
-                    <option value="company">UNITED SERVICE</option>
+                    <% company.forEach((cmp) => { %>
+                    <option value="<%= cmp.company %>">
+                        <%= cmp.company %>
+                    </option>
+                    <% }) %>
                 </select>
             </div>
             <button class="button-submit" type="sumbit">add furniture</button>

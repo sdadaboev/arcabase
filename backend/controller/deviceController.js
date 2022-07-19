@@ -46,23 +46,35 @@ export const addDevice = async (req, res, next) => {
         const createdDevice = await Device.create(deviceFromBody)
         let deviceIDforStorage = createdDevice._id
 
-        await Storage.updateOne(
-            { name: 'device storage' },
-            {
-                $push: {
-                    data: deviceIDforStorage,
+        if (createdDevice.commonSchema == 'storage') {
+            console.log('storageeeeeee')
+            await Storage.updateOne(
+                { name: 'device storage' },
+                {
+                    $push: {
+                        data: deviceIDforStorage,
+                    },
                 },
-            },
-        )
-        // !Employega bilan device qo'shilib ,  populate qilinvotti
-        await Employee.updateOne(
-            { _id: idOfFindedEmployee },
-            {
-                $push: {
-                    devices: deviceIDforStorage,
+            )
+            const populatedData = await Device.find().populate(
+                'attachedToOwner',
+            )
+            console.log('populated to owner', populatedData)
+        } else {
+            console.log('employeeeeeeeee')
+            await Employee.updateOne(
+                { _id: idOfFindedEmployee },
+                {
+                    $push: {
+                        devices: deviceIDforStorage,
+                    },
                 },
-            },
-        )
+            )
+            const populatedData = await Employee.findOne({
+                _id: idOfFindedEmployee,
+            }).populate('devices')
+            console.log('populated to employee', populatedData)
+        }
 
         const iden = await deviceFromBody.deviceID
         let files = req.objectOfFiles
@@ -99,13 +111,7 @@ export const addDevice = async (req, res, next) => {
             }
         }
         ///////////////////////////////////////////
-        const data = await Device.find().populate('attachedToOwner')
-        const data2 = await Employee.findOne({
-            _id: idOfFindedEmployee,
-        }).populate('devices')
 
-        console.log('device populate: ', data)
-        console.log('employees populate: ', data2)
         res.redirect('/device/add-device')
     } catch (error) {
         res.status(500).send({

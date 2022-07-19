@@ -44,11 +44,6 @@ const device = new Schema(
         notes: {
             type: String,
         },
-        cratedData: {
-            type: String,
-            trim: true,
-        },
-
         attachedToOwner: {
             type: Schema.Types.ObjectId,
             refPath: 'commonSchema',

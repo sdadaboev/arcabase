@@ -2,8 +2,6 @@ import Employee from '../models/employeeSchema.js'
 import Devices from '../models/deviceSchema.js'
 export const createEmployee = async (req, res) => {
     try {
-        console.log('req.body: ', req.body)
-
         const employee = new Employee({
             name: req.body.name,
             username: req.body.username,
@@ -38,7 +36,7 @@ export const createEmployee = async (req, res) => {
                             $push: {
                                 files: {
                                     name: `${fayl1.originalname}`,
-                                    path: `http://127.0.0.1:5000/assets/uploads/deviceUploads/deviceFiles/${fayl1.originalname}`,
+                                    path: `http://127.0.0.1:5000/assets/uploads/employeeUploads/employeeFiles/${fayl1.originalname}`,
                                 },
                             },
                         },
@@ -50,7 +48,7 @@ export const createEmployee = async (req, res) => {
                             $push: {
                                 photos: {
                                     name: `${fayl1.originalname}`,
-                                    path: `http://127.0.0.1:5000/assets/uploads/deviceUploads/devicePhotos/${fayl1.originalname}`,
+                                    path: `http://127.0.0.1:5000/assets/uploads/employeeUploads/employeePhotos/${fayl1.originalname}`,
                                 },
                             },
                         },

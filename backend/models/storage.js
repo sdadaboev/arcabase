@@ -8,7 +8,6 @@ const storage = new Schema(
             {
                 type: Schema.Types.ObjectId,
                 ref: 'devices',
-                unique: true,
                 trim: true,
             },
         ],

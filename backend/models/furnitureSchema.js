@@ -47,7 +47,11 @@ const furniture = new Schema(
 
         owner: {
             type: Schema.Types.ObjectId,
-            ref: 'employee',
+            refPath: 'commonSchema',
+        },
+        commonSchema: {
+            type: String,
+            enum: ['employees', 'storage'],
         },
         company: {
             type: Schema.Types.ObjectId,
