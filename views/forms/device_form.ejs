@@ -142,7 +142,11 @@
                     class="companyName"
                     required
                 >
-                    <option value="UNITED SERVICE">UNITED SERVICE</option>
+                    <% company.forEach((cmp) => { %>
+                    <option value="<%= cmp.company %>">
+                        <%= cmp.company %>
+                    </option>
+                    <% }) %>
                 </select>
             </div>
             <button class="button-submit" type="sumbit">add device</button>

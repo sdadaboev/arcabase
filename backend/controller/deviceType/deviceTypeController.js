@@ -1,5 +1,6 @@
 import DeviceTypes from '../../models/typess/deviceTypesSchema.js'
 import Employees from '../../models/employeeSchema.js'
+import Company from '../../models/company/company-schema.js'
 export const addDeviceType = async (req, res, next) => {
     try {
         if (!req.body) {
@@ -29,10 +30,12 @@ export const getDeviceTypes = async (req, res, next) => {
     try {
         const typesFromMongo = await DeviceTypes.find()
         const employeesFromMongo = await Employees.find()
+        const companies = await Company.find()
 
         res.render('createDevicePage', {
             types: typesFromMongo,
             employees: employeesFromMongo,
+            company: companies,
         })
         next()
     } catch (error) {
