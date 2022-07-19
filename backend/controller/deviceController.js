@@ -25,7 +25,7 @@ export const addDevice = async (req, res, next) => {
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////////////
-
+        console.log('body: ', req.body)
         const deviceFromBody = new Device({
             type: req.body.type,
             deviceName: req.body.deviceName,

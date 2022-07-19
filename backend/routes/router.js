@@ -118,14 +118,6 @@ export const addFurniture = async (req, res) => {
 //     }
 // }
 
-export const viewData = async (req, res) => {
-    try {
-        res.render('viewDataPage')
-    } catch (error) {
-        console.log(error)
-    }
-}
-
 export const viewOnlyData = async (req, res) => {
     try {
         res.render('onlyDataPage')

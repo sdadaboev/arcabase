@@ -17,6 +17,7 @@ import furniture from './backend/routes/furnitureRouter.js'
 import furnitureForm from './backend/middlewares/furnitureFormUpload.js'
 import storage from './backend/routes/storage/storageRouter.js'
 import company from './backend/routes/company/company-router.js'
+import getData from './backend/showRouter/alldataPageRouter.js'
 import {
     homepage,
     createDevicePage,
@@ -28,9 +29,9 @@ import {
     deleteDevice,
     chooseDeviceOrFurniture,
     addFurniture,
-    viewData,
     viewOnlyData,
 } from './backend/routes/router.js'
+
 import { uploadDevice } from './backend/controller/deviceController.js'
 const __dirname = path.resolve()
 
@@ -55,7 +56,7 @@ app.use('/furniture', furniture)
 app.use('/furniture-form', furnitureForm)
 app.use('/storage', storage)
 app.use('/company', company)
-
+app.use('/view', getData)
 // load engine
 app.set('view engine', 'ejs')
 
@@ -76,7 +77,7 @@ app.get('/add-device', createDevicePage)
 app.get('/create-device-button', chooseDeviceOrFurniture)
 app.get('/update-device-button', updateDevicePage)
 app.get('/create-employee-button', createEmployee)
-app.get('/view-data', viewData)
+// app.get('/view-data', viewData)
 app.get('/show-device-button', showDevice)
 app.get('/show-employee-button', showEmployee)
 app.get('/only-device/:id', onlyDevice)
